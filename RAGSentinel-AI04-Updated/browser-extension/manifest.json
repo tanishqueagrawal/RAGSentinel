@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "RAGSentinel Floating Bubble",
+  "version": "1.2.0",
+  "description": "Draggable live evidence verification bubble on web pages.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

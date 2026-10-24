@@ -1,0 +1,15 @@
+{
+  "name": "ragsentinel-draggable-bubble",
+  "version": "1.2.0",
+  "description": "Draggable desktop bubble for live evidence checks",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^35.0.0"
+  },
+  "allowScripts": {
+    "electron@35.7.5": true
+  }
+}

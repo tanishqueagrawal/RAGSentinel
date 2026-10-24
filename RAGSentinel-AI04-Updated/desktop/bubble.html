@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:transparent;overflow:hidden}body{display:grid;place-items:center}
+button{border:0;width:56px;height:56px;border-radius:50%;cursor:grab;color:#071321;font:900 23px Segoe UI;background:linear-gradient(135deg,#55d6d2,#7aa2ff);box-shadow:0 5px 22px #0008,0 0 0 3px #55d6d233;user-select:none;touch-action:none}
+button:active{cursor:grabbing;transform:scale(.96)}
+</style></head><body><button id="b" title="Drag me · click to open RAGSentinel">R</button><script>
+const b=document.getElementById('b');let down=false,moved=false,lastX=0,lastY=0;
+b.addEventListener('pointerdown',e=>{down=true;moved=false;lastX=e.screenX;lastY=e.screenY;b.setPointerCapture(e.pointerId)});
+b.addEventListener('pointermove',e=>{if(!down)return;const dx=e.screenX-lastX,dy=e.screenY-lastY;if(Math.abs(dx)+Math.abs(dy)>0)moved=true;if(moved)window.sentinel.moveBubble(dx,dy);lastX=e.screenX;lastY=e.screenY});
+b.addEventListener('pointerup',()=>{if(down&&!moved)window.sentinel.bubbleClick();down=false});
+b.addEventListener('pointercancel',()=>{down=false});
+</script></body></html>
